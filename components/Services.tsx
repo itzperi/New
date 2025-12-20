@@ -6,6 +6,10 @@ interface ServicesProps {
   onShowWebShowcase?: () => void;
   onShowMarketingShowcase?: () => void;
   onShowDesignShowcase?: () => void;
+  onShowVideoShowcase?: () => void;
+  onShowAIShowcase?: () => void;
+  onShowAnalyticsShowcase?: () => void;
+  onShowCoursesShowcase?: () => void;
 }
 
 const ANALYTICS_POINTS = [
@@ -29,7 +33,8 @@ const SERVICES = [
     icon: <Video className="w-6 h-6" />,
     tags: ["Reels", "@vort._.x", "Viral Content"],
     image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=800",
-    link: "https://www.instagram.com/vort._.x"
+    link: "https://www.instagram.com/vort._.x",
+    actionLabel: "View Showcase"
   },
   {
     id: 'marketing',
@@ -46,8 +51,9 @@ const SERVICES = [
     description: "Specializing in WhatsApp AI agents and comprehensive automation. Email, chatbots, and voice bots to scale your brand.",
     icon: <Smartphone className="w-6 h-6" />,
     tags: ["WhatsApp AI", "Automation", "Chatbots"],
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
-    video: "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-his-laptop-4354-large.mp4"
+    image: "/services/ai-app-dev.png",
+    video: "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-his-laptop-4354-large.mp4",
+    actionLabel: "View Solutions"
   },
   {
     id: 'webdesign',
@@ -64,7 +70,8 @@ const SERVICES = [
     description: "Expert-led training to empower individuals with modern digital strategy and high-income freelancing skills.",
     icon: <GraduationCap className="w-6 h-6" />,
     tags: ["Freelancing", "Skill Building", "Mentorship"],
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
+    actionLabel: "View Courses"
   },
   {
     id: 'graphic',
@@ -81,23 +88,36 @@ const SERVICES = [
     description: "Insight-driven growth. We analyze user behavior and conversion data to turn complex metrics into profit.",
     icon: <TrendingUp className="w-6 h-6" />,
     tags: ["Funnel Data", "Insights", "Growth"],
-    image: "https://images.unsplash.com/photo-1551288049-bbbda5366391?auto=format&fit=crop&q=80&w=1200",
-    points: ANALYTICS_POINTS
+    image: "/services/business-analytics.png",
+    points: ANALYTICS_POINTS,
+    actionLabel: "View Analytics"
   }
 ];
 
-const Services: React.FC<ServicesProps> = ({ onShowWebShowcase, onShowMarketingShowcase, onShowDesignShowcase }) => {
+const Services: React.FC<ServicesProps> = ({
+  onShowWebShowcase,
+  onShowMarketingShowcase,
+  onShowDesignShowcase,
+  onShowVideoShowcase,
+  onShowAIShowcase,
+  onShowAnalyticsShowcase,
+  onShowCoursesShowcase
+}) => {
   const handleCardClick = (service: any) => {
     if (service.id === 'webdesign') onShowWebShowcase?.();
     else if (service.id === 'marketing') onShowMarketingShowcase?.();
     else if (service.id === 'graphic') onShowDesignShowcase?.();
+    else if (service.id === 'video') onShowVideoShowcase?.();
+    else if (service.id === 'apps') onShowAIShowcase?.();
+    else if (service.id === 'analytics') onShowAnalyticsShowcase?.();
+    else if (service.id === 'courses') onShowCoursesShowcase?.();
     else if (service.link) window.open(service.link, '_blank');
   };
 
   return (
     <section id="services" className="py-24 bg-[#0a0a0f] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[100px] pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16">
           <Reveal>
@@ -113,43 +133,43 @@ const Services: React.FC<ServicesProps> = ({ onShowWebShowcase, onShowMarketingS
             const isInteractive = ['webdesign', 'marketing', 'graphic'].includes(service.id) || !!service.link;
             return (
               <Reveal key={index} delay={index * 50}>
-                <div 
+                <div
                   onClick={() => handleCardClick(service)}
                   className={`group rounded-3xl overflow-hidden bg-[#13131d] border border-white/5 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] transition-all duration-500 hover:scale-[1.02] flex flex-col h-full ${isInteractive ? 'cursor-pointer' : ''}`}
                 >
                   <div className="h-56 overflow-hidden relative">
-                      {service.video ? (
-                        <video 
-                          src={service.video} 
-                          autoPlay 
-                          loop 
-                          muted 
-                          playsInline 
-                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                        />
-                      ) : (
-                        <img 
-                          src={service.image} 
-                          alt={service.title} 
-                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
-                        />
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#13131d] via-transparent to-transparent z-10" />
-                      <div className="absolute top-4 left-4 z-20 w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white border border-white/10">
-                          {service.icon}
+                    {service.video ? (
+                      <video
+                        src={service.video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                      />
+                    ) : (
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#13131d] via-transparent to-transparent z-10" />
+                    <div className="absolute top-4 left-4 z-20 w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white border border-white/10">
+                      {service.icon}
+                    </div>
+                    {isInteractive && (
+                      <div className="absolute top-4 right-4 z-20 bg-purple-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg uppercase tracking-widest">
+                        {service.actionLabel || 'Visit Page'}
                       </div>
-                      {isInteractive && (
-                          <div className="absolute top-4 right-4 z-20 bg-purple-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg uppercase tracking-widest">
-                              {service.actionLabel || 'Visit Page'}
-                          </div>
-                      )}
+                    )}
                   </div>
-                  
+
                   <div className="p-8 flex flex-col flex-grow">
                     <h3 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors mb-3">
-                        {service.title}
+                      {service.title}
                     </h3>
-                    
+
                     {service.points ? (
                       <div className="space-y-2 mb-6">
                         {service.points.map((pt, i) => (
@@ -164,12 +184,12 @@ const Services: React.FC<ServicesProps> = ({ onShowWebShowcase, onShowMarketingS
                         {service.description}
                       </p>
                     )}
-                    
+
                     <div className="flex flex-wrap gap-2 mt-auto">
                       {service.tags?.map(tag => (
-                          <span key={tag} className="text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-lg bg-white/5 text-gray-500 border border-white/5">
-                              {tag}
-                          </span>
+                        <span key={tag} className="text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-lg bg-white/5 text-gray-500 border border-white/5">
+                          {tag}
+                        </span>
                       ))}
                     </div>
                   </div>

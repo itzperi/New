@@ -13,7 +13,7 @@ const logos = [
 
 const Hero: React.FC = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center pt-24 md:pt-32 pb-20 overflow-hidden">
+    <section id="hero" className="relative min-h-[100dvh] flex flex-col items-center justify-center pt-20 pb-16 md:pt-32 md:pb-20 overflow-hidden">
 
       {/* Background Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-purple-900/20 rounded-full blur-[120px] pointer-events-none" />
@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
       <div className="max-w-5xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
 
         <Reveal>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-xs font-medium text-purple-300 mb-6 md:mb-8 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-xs font-medium text-purple-300 mb-4 md:mb-8 backdrop-blur-sm">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
@@ -32,14 +32,14 @@ const Hero: React.FC = () => {
         </Reveal>
 
         <Reveal delay={100}>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-4 md:mb-6 leading-tight">
             Transform Your Brand <br className="hidden sm:block" />
             <span className="text-gradient">Into a Market Leader</span>
           </h1>
         </Reveal>
 
         <Reveal delay={200}>
-          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mb-8 md:mb-10 leading-relaxed px-4">
+          <p className="text-sm sm:text-lg md:text-xl text-gray-400 max-w-2xl mb-6 md:mb-10 leading-relaxed px-4">
             Full-service digital agency delivering cinema-quality video, marketing dominance, and AI-powered systems that drive real business growth.
           </p>
         </Reveal>
