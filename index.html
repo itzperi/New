@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brandlyon | Transform Your Brand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                purple: '#8b5cf6',
+                violet: '#7c3aed',
+                dark: '#0f0f16',
+                card: '#181823',
+              },
+              border: "rgba(255, 255, 255, 0.1)",
+              input: "rgba(255, 255, 255, 0.05)",
+              ring: "#8b5cf6",
+              background: "#050508",
+              foreground: "#ffffff",
+              primary: {
+                DEFAULT: "#8b5cf6",
+                foreground: "#ffffff",
+              },
+              secondary: {
+                DEFAULT: "rgba(255, 255, 255, 0.05)",
+                foreground: "#ffffff",
+              },
+              muted: {
+                DEFAULT: "rgba(255, 255, 255, 0.05)",
+                foreground: "#a1a1aa",
+              },
+              accent: {
+                DEFAULT: "#7c3aed",
+                foreground: "#ffffff",
+              },
+              card: {
+                DEFAULT: "#0f0f16",
+                foreground: "#ffffff",
+              }
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-glow': 'pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'marquee': 'marquee 25s linear infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              'pulse-glow': {
+                '0%, 100%': { opacity: '0.5', transform: 'scale(1)' },
+                '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+              },
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-50%)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      :root {
+        --folder-back: #4c1d95;
+        --folder-front: #6d28d9;
+        --folder-tab: #5b21b6;
+      }
+      body {
+        background-color: #050508;
+        color: #ffffff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .bg-folder-back { background-color: var(--folder-back); }
+      .bg-folder-front { background-color: var(--folder-front); }
+      .bg-folder-tab { background-color: var(--folder-tab); }
+      
+      .glass-nav {
+        background: rgba(5, 5, 8, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .glass-card {
+        background: linear-gradient(180deg, rgba(24, 24, 35, 0.7) 0%, rgba(24, 24, 35, 0.4) 100%);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .text-gradient {
+        background: linear-gradient(to right, #fff, #a78bfa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .purple-glow {
+        background: radial-gradient(circle at center, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.475.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "framer-motion": "https://esm.sh/framer-motion@^11.18.2",
+    "motion/react": "https://esm.sh/framer-motion@^11.18.2",
+    "clsx": "https://esm.sh/clsx@^2.1.1",
+    "tailwind-merge": "https://esm.sh/tailwind-merge@^2.6.0",
+    "react-use-measure": "https://esm.sh/react-use-measure@^3.1.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
