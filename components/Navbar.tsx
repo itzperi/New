@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import Button from './ui/Button';
 import { NavItem } from '../types';
 
@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? 'glass-nav py-3' : 'bg-transparent py-5'
+      className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-300 ${isMobileMenuOpen ? 'bg-[#050508] py-3' : isScrolled ? 'glass-nav py-3' : 'bg-transparent py-5'
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -97,20 +97,20 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-[#050508]/95 backdrop-blur-xl transition-all duration-300 md:hidden z-50 flex flex-col pt-24 px-8 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
+        className={`fixed inset-0 bg-[#050508] transition-opacity duration-300 md:hidden flex flex-col pt-24 px-8 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
+        style={{ zIndex: 1000, backgroundColor: '#050508' }}
       >
-        <div className="flex flex-col gap-6 overflow-y-auto max-h-[calc(100vh-160px)] py-4">
+        <div className="flex flex-col gap-6 py-4">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.label}
               onClick={() => handleNavClick(item.href)}
-              className="text-2xl font-bold text-gray-400 hover:text-white text-left transition-colors flex items-center justify-between group"
+              className="text-2xl font-bold text-white text-left transition-colors flex items-center justify-between group"
             >
               {item.label}
-              <span className="w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-12"></span>
+              <ArrowRight className="w-5 h-5 text-purple-500" />
             </button>
           ))}
         </div>
@@ -127,7 +127,6 @@ const Navbar: React.FC = () => {
           >
             Book Strategy Call
           </Button>
-          <p className="text-center text-gray-500 text-sm mt-6">Expert digital transformation at your fingertips.</p>
         </div>
       </div>
     </nav>

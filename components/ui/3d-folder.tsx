@@ -495,7 +495,7 @@ export function ImageLightbox({
                   "rounded-lg transition-all duration-200 ease-out",
                 )}
               >
-                <span>Live Preview</span>
+                <span>{currentProject.link.match(/\.(jpeg|jpg|gif|png|webp)$/i) ? 'View Image' : 'Live Preview'}</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </button>
             </div>

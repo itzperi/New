@@ -11,50 +11,50 @@ const DESIGN_PROJECTS: Project[] = [
   {
     id: "juicey",
     title: "Juicey Resto Cafe",
-    image: "/portfolio/juicey-logo.png",
-    link: "#"
+    image: "./brands/juicey.jpg",
+    link: "./brands/juicey.jpg"
   },
   {
     id: "madrasbbq",
     title: "Madras BBQ Spot",
-    image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=800",
-    link: "#"
+    image: "./brands/madras.jpg",
+    link: "./brands/madras.jpg"
   },
   {
     id: "bosscatering",
     title: "Boss Catering",
-    image: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=800",
-    link: "#"
+    image: "./brands/boss.jpg",
+    link: "./brands/boss.jpg"
   },
   {
     id: "briyaniwala",
     title: "Briyaniwala",
-    image: "https://images.unsplash.com/photo-1589302168068-964664d93dc9?auto=format&fit=crop&q=80&w=800",
-    link: "#"
+    image: "./brands/briyani.jpg",
+    link: "./brands/briyani.jpg"
   },
   {
     id: "minutesmemories",
     title: "Minutes Memories",
     image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7b?auto=format&fit=crop&q=80&w=800",
-    link: "#"
+    link: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7b?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: "jpfood",
     title: "JP Food Factory",
     image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800",
-    link: "#"
+    link: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: "deltakaran",
     title: "Delta Karan",
-    image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800",
-    link: "#"
+    image: "./brands/delta.jpg",
+    link: "./brands/delta.jpg"
   },
   {
     id: "foodmail",
     title: "Food Mail",
     image: "https://images.unsplash.com/photo-1526367790999-0150786486a9?auto=format&fit=crop&q=80&w=800",
-    link: "#"
+    link: "https://images.unsplash.com/photo-1526367790999-0150786486a9?auto=format&fit=crop&q=80&w=800"
   }
 ];
 
