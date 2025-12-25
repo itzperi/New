@@ -1,9 +1,12 @@
 import React from 'react';
 import { ArrowLeft, BookOpen, Code, Cpu, LineChart, Rocket } from 'lucide-react';
+import Button from './ui/Button';
 
 interface FreelancingCourseShowcaseProps {
     onBack: () => void;
 }
+
+const WHATSAPP_LINK = 'https://wa.me/918838768205?text=i%20am%20interested%20in%20your%20brandlyon%20freelancing%20services';
 
 const COURSES = [
     { title: "Digital Marketing", icon: <LineChart className="w-6 h-6" />, desc: "Master SEO, social media strategy, and brand building." },
@@ -44,6 +47,21 @@ const FreelancingCourseShowcase: React.FC<FreelancingCourseShowcaseProps> = ({ o
                             </p>
                         </div>
                     ))}
+                </div>
+
+                {/* CTA Section */}
+                <div className="mt-16 text-center max-w-2xl mx-auto">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Journey?</h2>
+                    <p className="text-gray-400 text-lg mb-8">
+                        Join our expert-led courses and transform your freelancing career. Get personalized guidance and mentorship.
+                    </p>
+                    <Button
+                        variant="secondary"
+                        size="lg"
+                        onClick={() => window.open(WHATSAPP_LINK, '_blank')}
+                    >
+                        Enroll Now via WhatsApp
+                    </Button>
                 </div>
             </div>
         </div>

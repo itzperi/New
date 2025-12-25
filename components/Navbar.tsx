@@ -40,17 +40,26 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isMobileMenuOpen ? 'glass-nav py-3' : 'bg-transparent py-5'
-      }`}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? 'glass-nav py-3' : 'bg-transparent py-5'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo - Stylized Text Fallback */}
+        {/* Logo */}
         <a href="#hero" className="flex items-center group relative z-[60] no-underline">
-            <span className="text-xl md:text-2xl font-black tracking-tighter text-white uppercase italic">
-              BRAND<span className="text-purple-500">LYON</span>
-            </span>
+          <img
+            src="/brandlyon-logo.png"
+            alt="Brandlyon Logo"
+            className="h-10 md:h-12 w-auto object-contain"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+              if (fallback) fallback.classList.remove('hidden');
+            }}
+          />
+          <span className="hidden text-xl md:text-2xl font-black tracking-tighter text-white uppercase italic">
+            BRAND<span className="text-purple-500">LYON</span>
+          </span>
         </a>
 
         {/* Desktop Links */}
@@ -69,13 +78,17 @@ const Navbar: React.FC = () => {
 
         {/* CTA */}
         <div className="hidden md:block">
-          <Button variant="primary" size="sm" onClick={() => document.getElementById('lead-capture')?.scrollIntoView({ behavior: 'smooth' })}>
+          <Button
+            variant="primary"
+            size="sm"
+            onClick={() => window.open('https://wa.me/918838768205?text=i%20am%20interested%20in%20your%20brandlyon%20freelancing%20services', '_blank')}
+          >
             Book Strategy Call
           </Button>
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden text-white p-2 relative z-[60] hover:bg-white/5 rounded-lg transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
@@ -85,10 +98,9 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 bg-[#050508]/95 backdrop-blur-xl transition-all duration-300 md:hidden z-50 flex flex-col pt-24 px-8 ${
-          isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
-        }`}
+      <div
+        className={`fixed inset-0 bg-[#050508]/95 backdrop-blur-xl transition-all duration-300 md:hidden z-50 flex flex-col pt-24 px-8 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
+          }`}
       >
         <div className="flex flex-col gap-6 overflow-y-auto max-h-[calc(100vh-160px)] py-4">
           {NAV_ITEMS.map((item) => (
@@ -102,12 +114,17 @@ const Navbar: React.FC = () => {
             </button>
           ))}
         </div>
-        
+
         <div className="mt-auto pb-12">
-          <Button variant="secondary" fullWidth size="lg" onClick={() => {
-            setIsMobileMenuOpen(false);
-            document.getElementById('lead-capture')?.scrollIntoView({ behavior: 'smooth' });
-          }}>
+          <Button
+            variant="secondary"
+            fullWidth
+            size="lg"
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              window.open('https://wa.me/918838768205?text=i%20am%20interested%20in%20your%20brandlyon%20freelancing%20services', '_blank');
+            }}
+          >
             Book Strategy Call
           </Button>
           <p className="text-center text-gray-500 text-sm mt-6">Expert digital transformation at your fingertips.</p>

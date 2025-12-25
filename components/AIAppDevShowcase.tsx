@@ -56,7 +56,7 @@ const AIAppDevShowcase: React.FC<AIAppDevShowcaseProps> = ({ onBack }) => {
                     <div className="absolute inset-0 flex items-center justify-center bg-black/40">
                         <Button
                             variant="secondary"
-                            onClick={() => document.getElementById('lead-capture')?.scrollIntoView({ behavior: 'smooth' })}
+                            onClick={() => window.open('https://wa.me/918838768205?text=i%20am%20interested%20in%20your%20brandlyon%20freelancing%20services', '_blank')}
                         >
                             Build Your AI Agent
                         </Button>

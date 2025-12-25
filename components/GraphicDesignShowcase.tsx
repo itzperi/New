@@ -11,7 +11,7 @@ const DESIGN_PROJECTS: Project[] = [
   {
     id: "juicey",
     title: "Juicey Resto Cafe",
-    image: "https://images.unsplash.com/photo-1466632348570-8152827a2753?auto=format&fit=crop&q=80&w=800",
+    image: "/portfolio/juicey-logo.png",
     link: "#"
   },
   {
@@ -59,7 +59,7 @@ const DESIGN_PROJECTS: Project[] = [
 ];
 
 const MARQUEE_TEXTS = [
-  "PREMIUM BRANDING", "MASCOT LOGOS", "VISUAL SYSTEMS", "PACKAGING DESIGN", 
+  "PREMIUM BRANDING", "MASCOT LOGOS", "VISUAL SYSTEMS", "PACKAGING DESIGN",
   "RESTAURANT IDENTITY", "CINEMATIC GRAPHICS", "VECTOR ART", "BRAND GUIDELINES"
 ];
 
@@ -67,7 +67,7 @@ const GraphicDesignShowcase: React.FC<GraphicDesignShowcaseProps> = ({ onBack })
   return (
     <div className="min-h-screen bg-[#050508] pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col items-center text-center">
-        <button 
+        <button
           onClick={onBack}
           className="flex items-center gap-2 text-purple-400 hover:text-white transition-colors mb-8 group"
         >
@@ -96,17 +96,17 @@ const GraphicDesignShowcase: React.FC<GraphicDesignShowcaseProps> = ({ onBack })
 
       <section className="max-w-6xl mx-auto px-6 py-12 flex flex-col items-center">
         <div className="w-full flex justify-center py-20 bg-gradient-to-b from-white/[0.02] to-transparent rounded-3xl border border-white/5 shadow-inner">
-            <AnimatedFolder 
-              title="Graphic Design Portfolio" 
-              projects={DESIGN_PROJECTS} 
-            />
+          <AnimatedFolder
+            title="Graphic Design Portfolio"
+            projects={DESIGN_PROJECTS}
+          />
         </div>
       </section>
 
       <div className="max-w-2xl mx-auto text-center px-6">
         <h2 className="text-3xl font-bold mb-6">Need a visual upgrade?</h2>
-        <Button 
-          variant="secondary" 
+        <Button
+          variant="secondary"
           size="lg"
           onClick={() => document.getElementById('lead-capture')?.scrollIntoView({ behavior: 'smooth' })}
         >

@@ -11,7 +11,7 @@ const PORTFOLIO_PROJECTS: Project[] = [
   {
     id: "avit",
     title: "AVIT College",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800",
+    image: "/portfolio/avit-college.png",
     link: "https://avit.ac.in/"
   },
   {
@@ -23,7 +23,7 @@ const PORTFOLIO_PROJECTS: Project[] = [
   {
     id: "lifeline",
     title: "Lifeline Facility",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6958?auto=format&fit=crop&q=80&w=800",
+    image: "/portfolio/lifeline-facility.png",
     link: "https://www.lifelinefacility.in/"
   },
   {
@@ -59,7 +59,7 @@ const PORTFOLIO_PROJECTS: Project[] = [
 ];
 
 const MARQUEE_TEXTS = [
-  "HIGH PERFORMANCE", "CUSTOM APPS", "MODERN UI/UX", "SCALABLE SYSTEMS", 
+  "HIGH PERFORMANCE", "CUSTOM APPS", "MODERN UI/UX", "SCALABLE SYSTEMS",
   "CONVERSION OPTIMIZED", "MOBILE FIRST", "AI INTEGRATED", "NEXT-GEN DESIGN"
 ];
 
@@ -68,7 +68,7 @@ const WebDesignShowcase: React.FC<WebDesignShowcaseProps> = ({ onBack }) => {
     <div className="min-h-screen bg-[#050508] pt-24 pb-20">
       {/* Header Info */}
       <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col items-center text-center">
-        <button 
+        <button
           onClick={onBack}
           className="flex items-center gap-2 text-purple-400 hover:text-white transition-colors mb-8 group"
         >
@@ -77,7 +77,7 @@ const WebDesignShowcase: React.FC<WebDesignShowcaseProps> = ({ onBack }) => {
         </button>
         <h1 className="text-4xl md:text-6xl font-bold mb-4">Our <span className="text-gradient">Web Designs</span></h1>
         <p className="text-gray-400 max-w-xl text-lg leading-relaxed">
-          Hover over the collection below to explore our high-performance digital experiences. 
+          Hover over the collection below to explore our high-performance digital experiences.
           Click any card to view the live production site.
         </p>
       </div>
@@ -100,22 +100,22 @@ const WebDesignShowcase: React.FC<WebDesignShowcaseProps> = ({ onBack }) => {
       {/* 3D Folder Section */}
       <section className="max-w-6xl mx-auto px-6 py-12 flex flex-col items-center">
         <div className="w-full flex justify-center py-20 bg-gradient-to-b from-white/[0.02] to-transparent rounded-3xl border border-white/5 shadow-inner">
-            <AnimatedFolder 
-              title="Featured Client Projects" 
-              projects={PORTFOLIO_PROJECTS} 
-            />
+          <AnimatedFolder
+            title="Featured Client Projects"
+            projects={PORTFOLIO_PROJECTS}
+          />
         </div>
       </section>
 
       {/* CTA Section */}
       <div className="max-w-2xl mx-auto text-center mt-12 px-6">
         <h2 className="text-3xl font-bold mb-6">Ready to launch your own?</h2>
-        <Button 
-          variant="secondary" 
-          size="lg" 
+        <Button
+          variant="secondary"
+          size="lg"
           onClick={() => document.getElementById('lead-capture')?.scrollIntoView({ behavior: 'smooth' })}
         >
-            Start Your Project
+          Start Your Project
         </Button>
       </div>
     </div>

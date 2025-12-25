@@ -7,17 +7,17 @@ const LeadCapture: React.FC = () => {
     <section id="lead-capture" className="py-24 relative overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20 z-0" />
-      
+
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="glass-card rounded-3xl p-6 md:p-16 border border-white/10 shadow-2xl flex flex-col lg:flex-row gap-12 items-center">
-          
+
           <div className="w-full lg:w-1/2">
             <Reveal width="100%">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center lg:text-left">Ready to Elevate Your Brand?</h2>
               <p className="text-gray-300 mb-8 text-lg text-center lg:text-left">
                 Get a free 30-minute consultation and custom growth plan for your business.
               </p>
-              
+
               <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 mb-8">
                 {[
                   "Audit of current marketing",
@@ -53,7 +53,13 @@ const LeadCapture: React.FC = () => {
                   <label className="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1.5 ml-1">Main Business Challenge</label>
                   <textarea rows={3} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all resize-none" placeholder="How can we help you scale?" />
                 </div>
-                <Button fullWidth variant="secondary" size="lg" className="mt-2 py-5 text-lg font-bold">
+                <Button
+                  fullWidth
+                  variant="secondary"
+                  size="lg"
+                  className="mt-2 py-5 text-lg font-bold"
+                  onClick={() => window.open('https://wa.me/918838768205?text=i%20am%20interested%20in%20your%20brandlyon%20freelancing%20services', '_blank')}
+                >
                   Claim Your Free Consultation
                 </Button>
                 <p className="text-[10px] text-center text-gray-600 px-4">

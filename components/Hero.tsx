@@ -3,6 +3,7 @@ import Button from './ui/Button';
 import { PlayCircle } from 'lucide-react';
 import { Reveal } from './ui/Reveal';
 import { LogoCloud } from './ui/logo-cloud-4';
+import { MagneticButton } from './ui/magnetic-button';
 
 const logos = [
   { src: "/brands/avit-logo.png", alt: "AVIT College" },
@@ -46,7 +47,13 @@ const Hero: React.FC = () => {
 
         <Reveal delay={300}>
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0">
-            <Button size="lg" variant="secondary" fullWidth className="sm:w-auto text-sm sm:text-base" onClick={() => document.getElementById('lead-capture')?.scrollIntoView({ behavior: 'smooth' })}>
+            <Button
+              size="lg"
+              variant="secondary"
+              fullWidth
+              className="sm:w-auto text-sm sm:text-base"
+              onClick={() => window.open('https://wa.me/918838768205?text=i%20am%20interested%20in%20your%20brandlyon%20freelancing%20services', '_blank')}
+            >
               Book Your Free Strategy Call
             </Button>
             <Button size="lg" variant="outline" fullWidth className="sm:w-auto gap-2 text-sm sm:text-base" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>

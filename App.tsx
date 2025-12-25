@@ -6,7 +6,6 @@ import Services from './components/Services';
 import Process from './components/Process';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
-import LeadCapture from './components/LeadCapture';
 import Footer from './components/Footer';
 import Button from './components/ui/Button';
 import WebDesignShowcase from './components/WebDesignShowcase';
@@ -16,6 +15,7 @@ import VideoContentShowcase from './components/VideoContentShowcase';
 import AIAppDevShowcase from './components/AIAppDevShowcase';
 import BusinessAnalyticsShowcase from './components/BusinessAnalyticsShowcase';
 import FreelancingCourseShowcase from './components/FreelancingCourseShowcase';
+import FloatingCTAs from './components/FloatingCTAs';
 
 function App() {
   const [view, setView] = useState<'home' | 'web-showcase' | 'marketing-showcase' | 'design-showcase' | 'video-showcase' | 'ai-showcase' | 'analytics-showcase' | 'courses-showcase'>('home');
@@ -24,6 +24,31 @@ function App() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [view]);
+
+  // Handle browser back button
+  useEffect(() => {
+    const handlePopState = () => {
+      setView('home');
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Function to change view and update history
+  const changeView = (newView: typeof view) => {
+    setView(newView);
+    window.history.pushState({ view: newView }, '', `#${newView}`);
+  };
+
+  // Function to go back to home and scroll to services
+  const backToServices = () => {
+    setView('home');
+    window.history.pushState({ view: 'home' }, '', '#home');
+    setTimeout(() => {
+      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
 
   return (
     <div className="min-h-screen bg-[#050508] text-white overflow-x-hidden selection:bg-purple-500/30 selection:text-white">
@@ -34,13 +59,13 @@ function App() {
             <Hero />
             <Features />
             <Services
-              onShowWebShowcase={() => setView('web-showcase')}
-              onShowMarketingShowcase={() => setView('marketing-showcase')}
-              onShowDesignShowcase={() => setView('design-showcase')}
-              onShowVideoShowcase={() => setView('video-showcase')}
-              onShowAIShowcase={() => setView('ai-showcase')}
-              onShowAnalyticsShowcase={() => setView('analytics-showcase')}
-              onShowCoursesShowcase={() => setView('courses-showcase')}
+              onShowWebShowcase={() => changeView('web-showcase')}
+              onShowMarketingShowcase={() => changeView('marketing-showcase')}
+              onShowDesignShowcase={() => changeView('design-showcase')}
+              onShowVideoShowcase={() => changeView('video-showcase')}
+              onShowAIShowcase={() => changeView('ai-showcase')}
+              onShowAnalyticsShowcase={() => changeView('analytics-showcase')}
+              onShowCoursesShowcase={() => changeView('courses-showcase')}
             />
 
 
@@ -48,25 +73,25 @@ function App() {
             <Process />
             <Testimonials />
             <FAQ />
-            <LeadCapture />
           </>
         ) : view === 'web-showcase' ? (
-          <WebDesignShowcase onBack={() => setView('home')} />
+          <WebDesignShowcase onBack={backToServices} />
         ) : view === 'marketing-showcase' ? (
-          <MarketingShowcase onBack={() => setView('home')} />
+          <MarketingShowcase onBack={backToServices} />
         ) : view === 'design-showcase' ? (
-          <GraphicDesignShowcase onBack={() => setView('home')} />
+          <GraphicDesignShowcase onBack={backToServices} />
         ) : view === 'video-showcase' ? (
-          <VideoContentShowcase onBack={() => setView('home')} />
+          <VideoContentShowcase onBack={backToServices} />
         ) : view === 'ai-showcase' ? (
-          <AIAppDevShowcase onBack={() => setView('home')} />
+          <AIAppDevShowcase onBack={backToServices} />
         ) : view === 'analytics-showcase' ? (
-          <BusinessAnalyticsShowcase onBack={() => setView('home')} />
+          <BusinessAnalyticsShowcase onBack={backToServices} />
         ) : (
-          <FreelancingCourseShowcase onBack={() => setView('home')} />
+          <FreelancingCourseShowcase onBack={backToServices} />
         )}
       </main>
       <Footer />
+      <FloatingCTAs />
     </div>
   );
 }

@@ -9,13 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "clsx": "latest",
+    "framer-motion": "^12.23.26",
     "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "framer-motion": "latest",
-    "clsx": "latest",
-    "tailwind-merge": "latest",
-    "react-use-measure": "latest"
+    "react-use-measure": "latest",
+    "tailwind-merge": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
