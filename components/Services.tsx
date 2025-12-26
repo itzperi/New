@@ -12,6 +12,19 @@ interface ServicesProps {
   onShowCoursesShowcase?: () => void;
 }
 
+interface Service {
+  id: string;
+  title: string;
+  description?: string;
+  icon: React.ReactNode;
+  tags?: string[];
+  image?: string;
+  link?: string;
+  actionLabel?: string;
+  points?: string[];
+  video?: string;
+}
+
 const ANALYTICS_POINTS = [
   "We analyze your audience behavior, funnel data, and conversion drop-offs.",
   "We identify real fears, desires, and trust gaps from user actions.",
@@ -25,7 +38,7 @@ const ANALYTICS_POINTS = [
   "Results improve continuously through testing and feedback."
 ];
 
-const SERVICES = [
+const SERVICES: Service[] = [
   {
     id: 'video',
     title: "Video Editing & Content",
@@ -44,16 +57,6 @@ const SERVICES = [
     tags: ["SEO", "Influencer", "@doeshi_influencer_offl"],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
     actionLabel: "View Results"
-  },
-  {
-    id: 'apps',
-    title: "AI & App Development",
-    description: "Specializing in WhatsApp AI agents and comprehensive automation. Email, chatbots, and voice bots to scale your brand.",
-    icon: <Smartphone className="w-6 h-6" />,
-    tags: ["WhatsApp AI", "Automation", "Chatbots"],
-    image: "/services/ai-app-dev.png",
-    video: "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-his-laptop-4354-large.mp4",
-    actionLabel: "View Solutions"
   },
   {
     id: 'webdesign',

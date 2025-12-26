@@ -11,7 +11,7 @@ const PORTFOLIO_PROJECTS: Project[] = [
   {
     id: "avit",
     title: "AVIT College",
-    image: "/portfolio/avit-college.png",
+    image: "./brands/Screenshot 2025-12-24 211511.png",
     link: "https://avit.ac.in/"
   },
   {
@@ -23,7 +23,7 @@ const PORTFOLIO_PROJECTS: Project[] = [
   {
     id: "lifeline",
     title: "Lifeline Facility",
-    image: "/portfolio/lifeline-facility.png",
+    image: "./brands/Screenshot 2025-12-24 211535.png",
     link: "https://www.lifelinefacility.in/"
   },
   {

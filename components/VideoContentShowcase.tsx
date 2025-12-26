@@ -38,7 +38,7 @@ const VIDEO_EDITING_LINKS = [
 const PORTFOLIO_PROJECT: Project = {
     id: "portfolio",
     title: "Full Video Editing Portfolio",
-    image: "/portfolio/video-editing-portfolio.png",
+    image: "./brands/videoedit.jpg",
     link: "https://drive.google.com/drive/folders/1M3G0BgnyuWMtzrpoqIxJiVp6rPNvEbHU"
 };
 

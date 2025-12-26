@@ -17,7 +17,7 @@ const DESIGN_PROJECTS: Project[] = [
   {
     id: "madrasbbq",
     title: "Madras BBQ Spot",
-    image: "./brands/madras.jpg",
+    image: "./public/brands/bbq.jpg",
     link: "./brands/madras.jpg"
   },
   {

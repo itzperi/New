@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "generate:favicon": "node ./scripts/generate-favicon.js",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@types/node": "latest",
     "@vitejs/plugin-react": "latest",
+    "png-to-ico": "^3.0.1",
     "typescript": "latest",
     "vite": "latest"
   }
